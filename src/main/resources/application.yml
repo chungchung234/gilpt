@@ -1,1 +1,17 @@
-spring.application.name=gilpt
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+api:
+  keys:
+    odsay: ${OD_SAY_API_KEY}
+    gpt: ${GPT_API_KEY}
